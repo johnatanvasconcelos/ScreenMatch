@@ -1,4 +1,5 @@
-# 🎬 ScreeMatch Streaming Service (Java POO) (🚧...EM ANDAMENTO)
+# 🎬 ScreeMatch Streaming Service (Java POO) 
+## (🚧...EM ANDAMENTO)
 
 Este é um projeto básico de um **serviço de streaming**, que está sendo desenvolvido em **Java** para praticar os conceitos de **Programação Orientada a Objetos (POO)**. O objetivo é simular um serviço de streaming onde os usuários podem acessar e gerenciar filmes, séries e seus episódios.
 
@@ -6,7 +7,7 @@ Este é um projeto básico de um **serviço de streaming**, que está sendo dese
 
 ## 🚀 Funcionalidades
 
-✅... Cadastro de filmes e séries com título, gênero, duração, etc.  
+✅ Cadastro de filmes e séries com título, gênero, duração, etc.  
 🚧... Gerenciamento de usuários e playlists personalizadas  
 🚧... Simulação de reprodução de mídia  
 ✅ Sistema de avaliação dos conteúdos  
@@ -22,8 +23,7 @@ Este é um projeto básico de um **serviço de streaming**, que está sendo dese
 ---
 ## 📂 Estrutura do projeto
 
-```
-## 
+``` 
 📦 streaming-service 
     ┣ 📂 src 
     ┃   ┣📂 com.screenmatch 
