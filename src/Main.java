@@ -4,6 +4,8 @@ import com.screenmatch.models.Episode;
 import com.screenmatch.models.Movie;
 import com.screenmatch.models.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Movie movieOne = new Movie();
@@ -78,5 +80,15 @@ public class Main {
         calculator.include(seriesOne);
         System.out.println("Total time for watch all movies and series: ");
         System.out.println(calculator.getTotalTime() + " minutes or " + calculator.getTotalTime()/60 + " hours");
+
+        System.out.println("\n------------------------------------------------------------\n");
+
+        ArrayList<Movie> movies = new ArrayList<>();
+        movies.add(movieOne);
+        movies.add(movieTwo);
+        movies.add(movieThree);
+        System.out.println("Number of movies in the list: " + movies.size() + " movies");
+        System.out.println("First movie title: " + movies.getFirst().getTitle());
+        System.out.println(movies);
     }
 }
