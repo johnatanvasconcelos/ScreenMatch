@@ -20,7 +20,7 @@ Este é um projeto básico de um **serviço de streaming**, que está sendo dese
 - **Paradigma POO** (Classes, Objetos, Herança, etc.)
 - **Coleções Java** (ArrayList, HashMap, etc.)
 ---
-
+```
 ## 📂 Estrutura do projeto
 📦 streaming-service 
     ┣ 📂 src 
@@ -37,7 +37,7 @@ Este é um projeto básico de um **serviço de streaming**, que está sendo dese
     ┣ 📜 Main.java 
     ┣ 📜 README.md
 ---
-
+```
 Conceitos de POO aplicados
 🔹 Encapsulamento: Uso de private para atributos e métodos de acesso (getters e setters).
 🔹 Herança: Movie e Series herdam da classe Title.
