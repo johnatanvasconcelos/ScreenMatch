@@ -48,6 +48,19 @@ public class Serie extends Title {
     }
 
     @Override
+    public void showInfo(){
+        System.out.println("Title: " + getTitle() + " - " + getYear());
+        System.out.println("Duration: " + getDuration() + " minutes");
+        System.out.println("Rate: " + String.format("%.2f", getAverageRate()));
+        if(isActive()){
+            System.out.println("This series have more seasons on the way");
+        }else{
+            System.out.println("no more seasons");
+        }
+        System.out.println("Active: " + isActive());
+    }
+
+    @Override
     public int getDuration() {
         return seasons * episodesPerSeason * minutesPerEpisode;
     }
