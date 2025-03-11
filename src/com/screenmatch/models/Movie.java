@@ -1,5 +1,7 @@
 package com.screenmatch.models;
 
+import com.screenmatch.calculations.Rateable;
+
 public class Movie extends Title {
     private String director;
 

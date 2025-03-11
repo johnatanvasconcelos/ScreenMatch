@@ -1,6 +1,8 @@
+import com.screenmatch.calculations.FilterRecomendation;
 import com.screenmatch.calculations.TimeCalculator;
+import com.screenmatch.models.Episode;
 import com.screenmatch.models.Movie;
-import com.screenmatch.models.Serie;
+import com.screenmatch.models.Series;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,41 +11,72 @@ public class Main {
         movieOne.setYear(1972);
         movieOne.setSignatureMovie(true);
         movieOne.setDuration(175);
+        movieOne.rateMovie(9.5);
+        movieOne.rateMovie(10);
+        movieOne.rateMovie(8.8);
+        movieOne.showInfo();
+        System.out.println("Total de avaliações: " + movieOne.getTotalRate());
+
+        System.out.println("\n------------------------------------------------------------\n");
 
         Movie movieTwo = new Movie();
         movieTwo.setTitle("Avatar");
         movieTwo.setYear(2023);
         movieTwo.setSignatureMovie(true);
         movieTwo.setDuration(200);
+        movieTwo.rateMovie(7);
+        movieTwo.rateMovie(6);
+        movieTwo.rateMovie(7.8);
+        movieTwo.showInfo();
+        System.out.println("Total de avaliações: " + movieTwo.getTotalRate());
+
+        System.out.println("\n------------------------------------------------------------\n");
 
         Movie movieThree = new Movie();
         movieThree.setTitle("King Lion");
-        movieThree.setYear(1995);
+        movieThree.setYear(1994);
         movieThree.setSignatureMovie(true);
         movieThree.setDuration(110);
+        movieThree.rateMovie(9.3);
+        movieThree.rateMovie(8.7);
+        movieThree.rateMovie(9.5);
+        movieThree.showInfo();
+        System.out.println("Total de avaliações: " + movieThree.getTotalRate());
 
-        movieOne.showInfo();
-        movieOne.rateMovie(7);
-        movieOne.rateMovie(10);
-        movieOne.rateMovie(8);
+        System.out.println("\n------------------------------------------------------------\n");
 
-        System.out.println("Total de avaliações: " + movieOne.getTotalRate());
-        System.out.println(movieOne.getAverageRate());
+        Series seriesOne = new Series();
+        seriesOne.setTitle("Breaking Bad");
+        seriesOne.setYear(2008);
+        seriesOne.setEpisodes(62);
+        seriesOne.setMinutesPerEpisode(50);
+        seriesOne.setSeasons(5);
+        seriesOne.setActive(false);
+        seriesOne.rateMovie(10);
+        seriesOne.rateMovie(8);
+        seriesOne.rateMovie(9);
+        seriesOne.showInfo();
+        FilterRecomendation filter = new FilterRecomendation();
+        filter.filter(seriesOne);
 
-        Serie serieOne = new Serie();
-        serieOne.setTitle("Breaking Bad");
-        serieOne.setYear(2008);
-        serieOne.setEpisodesPerSeason(13);
-        serieOne.setMinutesPerEpisode(50);
-        serieOne.setSeasons(5);
-        serieOne.setActive(false);
-        System.out.println("Duração da série: " + serieOne.getDuration() + " minutes");
+        System.out.println("\n-----------------------------\n");
+
+        Episode episode = new Episode();
+        episode.setTitle("Pilot");
+        episode.setNumber(1);
+        episode.setSerie(seriesOne);
+        episode.setTotalViews(300);
+        episode.showInfo();
+        filter.filter(episode);
+
+        System.out.println("\n------------------------------------------------------------\n");
 
         TimeCalculator calculator = new TimeCalculator();
         calculator.include(movieOne);
         calculator.include(movieTwo);
         calculator.include(movieThree);
-        calculator.include(serieOne);
-        System.out.println(calculator.getTotalTime() + " minutes");
+        calculator.include(seriesOne);
+        System.out.println("Total time for watch all movies and series: ");
+        System.out.println(calculator.getTotalTime() + " minutes or " + calculator.getTotalTime()/60 + " hours");
     }
 }

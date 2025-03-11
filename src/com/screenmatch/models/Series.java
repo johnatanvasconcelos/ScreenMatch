@@ -1,10 +1,9 @@
 package com.screenmatch.models;
 
-public class Serie extends Title {
+public class Series extends Title {
     private int episodes;
     private int seasons;
     private boolean active;
-    private int episodesPerSeason;
     private int minutesPerEpisode;
 
     public int getEpisodes() {
@@ -31,14 +30,6 @@ public class Serie extends Title {
         this.active = active;
     }
 
-    public int getEpisodesPerSeason() {
-        return episodesPerSeason;
-    }
-
-    public void setEpisodesPerSeason(int episodesPerSeason) {
-        this.episodesPerSeason = episodesPerSeason;
-    }
-
     public int getMinutesPerEpisode() {
         return minutesPerEpisode;
     }
@@ -53,15 +44,16 @@ public class Serie extends Title {
         System.out.println("Duration: " + getDuration() + " minutes");
         System.out.println("Rate: " + String.format("%.2f", getAverageRate()));
         if(isActive()){
-            System.out.println("This series have more seasons on the way");
+            System.out.println("Status: This series has more seasons on the way");
         }else{
-            System.out.println("no more seasons");
+            System.out.println("Status: This series has canceled or is finished");
         }
-        System.out.println("Active: " + isActive());
+        System.out.println("Number of seasons: " + getSeasons());
+        System.out.println("Number of episodes: " + getEpisodes());
     }
 
     @Override
     public int getDuration() {
-        return seasons * episodesPerSeason * minutesPerEpisode;
+        return episodes * minutesPerEpisode;
     }
 }

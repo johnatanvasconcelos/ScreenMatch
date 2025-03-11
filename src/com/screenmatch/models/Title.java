@@ -1,6 +1,10 @@
 package com.screenmatch.models;
 
-public class Title {
+import com.screenmatch.calculations.Rateable;
+
+import static java.lang.Math.round;
+
+public class Title implements Rateable {
     private String title;
     private int year;
     private boolean signatureMovie;
@@ -44,18 +48,26 @@ public class Title {
         return totalRate;
     }
 
+    //metodo para mostrar algumas informações gerais do título
     public void showInfo(){
-        System.out.println("Movie: " + title + " - " + year);
-        System.out.println("Duration: " + duration + " minutes");
-        System.out.println("Rate: " + sumRate);
+        System.out.println("Title: " + getTitle() + " - " + getYear());
+        System.out.println("Duration: " + getDuration() + " minutes");
+        System.out.println("Rate: " + String.format("%.2f", getAverageRate()));
     }
 
+    //metodo que lança uma avaliação para o título pelo usuário
     public void rateMovie(double rate){
         sumRate += rate;
         totalRate++;
     }
 
+    //metodo que retorna a avaliação geral do título
     public double getAverageRate(){
         return sumRate / totalRate;
+    }
+
+    @Override
+    public int getRating() {
+        return (int) getAverageRate() / 2;
     }
 }
