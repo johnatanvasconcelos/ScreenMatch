@@ -49,7 +49,7 @@ public class Episode implements Rateable {
     }
 
     @Override
-    public int getRating() {
+    public double getRating() {
         if (totalViews >= 100){
             return 4;
         }else{

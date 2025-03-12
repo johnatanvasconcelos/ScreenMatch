@@ -5,6 +5,10 @@ import com.screenmatch.calculations.Rateable;
 public class Movie extends Title {
     private String director;
 
+    public Movie(String title, int year) {
+        super(title, year);
+    }
+
     public String getDirector() {
         return director;
     }
@@ -13,8 +17,4 @@ public class Movie extends Title {
         this.director = director;
     }
 
-    @Override
-    public String toString() {
-        return getTitle() + " (" + getYear() + ")";
-    }
 }

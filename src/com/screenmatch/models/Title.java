@@ -2,9 +2,7 @@ package com.screenmatch.models;
 
 import com.screenmatch.calculations.Rateable;
 
-import static java.lang.Math.round;
-
-public class Title implements Rateable {
+public class Title implements Rateable, Comparable<Title> {
     private String title;
     private int year;
     private boolean signatureMovie;
@@ -48,6 +46,11 @@ public class Title implements Rateable {
         return totalRate;
     }
 
+    public Title(String title, int year){
+        this.setTitle(title);
+        this.setYear(year);
+    }
+
     //metodo para mostrar algumas informações gerais do título
     public void showInfo(){
         System.out.println("Title: " + getTitle() + " - " + getYear());
@@ -67,7 +70,17 @@ public class Title implements Rateable {
     }
 
     @Override
-    public int getRating() {
-        return (int) getAverageRate() / 2;
+    public double getRating() {
+        return getAverageRate() / 2;
+    }
+
+    @Override
+    public String toString() {
+        return getTitle() + " (" + getYear() + ")";
+    }
+
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.getTitle().compareTo(otherTitle.getTitle());
     }
 }

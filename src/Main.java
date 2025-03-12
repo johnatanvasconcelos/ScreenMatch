@@ -3,14 +3,15 @@ import com.screenmatch.calculations.TimeCalculator;
 import com.screenmatch.models.Episode;
 import com.screenmatch.models.Movie;
 import com.screenmatch.models.Series;
+import com.screenmatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Movie movieOne = new Movie();
-        movieOne.setTitle("The Godfather");
-        movieOne.setYear(1972);
+        Movie movieOne = new Movie("The Godfather", 1972);
         movieOne.setSignatureMovie(true);
         movieOne.setDuration(175);
         movieOne.rateMovie(9.5);
@@ -21,9 +22,7 @@ public class Main {
 
         System.out.println("\n------------------------------------------------------------\n");
 
-        Movie movieTwo = new Movie();
-        movieTwo.setTitle("Avatar");
-        movieTwo.setYear(2023);
+        Movie movieTwo = new Movie("Avatar", 2009);
         movieTwo.setSignatureMovie(true);
         movieTwo.setDuration(200);
         movieTwo.rateMovie(7);
@@ -34,9 +33,7 @@ public class Main {
 
         System.out.println("\n------------------------------------------------------------\n");
 
-        Movie movieThree = new Movie();
-        movieThree.setTitle("King Lion");
-        movieThree.setYear(1994);
+        Movie movieThree = new Movie("King Lion", 1994);
         movieThree.setSignatureMovie(true);
         movieThree.setDuration(110);
         movieThree.rateMovie(9.3);
@@ -47,16 +44,14 @@ public class Main {
 
         System.out.println("\n------------------------------------------------------------\n");
 
-        Series seriesOne = new Series();
-        seriesOne.setTitle("Breaking Bad");
-        seriesOne.setYear(2008);
+        Series seriesOne = new Series("Breaking Bad", 2008);
         seriesOne.setEpisodes(62);
         seriesOne.setMinutesPerEpisode(50);
         seriesOne.setSeasons(5);
         seriesOne.setActive(false);
         seriesOne.rateMovie(10);
-        seriesOne.rateMovie(8);
-        seriesOne.rateMovie(9);
+        seriesOne.rateMovie(8.8);
+        seriesOne.rateMovie(9.5);
         seriesOne.showInfo();
         FilterRecomendation filter = new FilterRecomendation();
         filter.filter(seriesOne);
@@ -83,12 +78,31 @@ public class Main {
 
         System.out.println("\n------------------------------------------------------------\n");
 
-        ArrayList<Movie> movies = new ArrayList<>();
-        movies.add(movieOne);
-        movies.add(movieTwo);
-        movies.add(movieThree);
-        System.out.println("Number of movies in the list: " + movies.size() + " movies");
-        System.out.println("First movie title: " + movies.getFirst().getTitle());
-        System.out.println(movies);
+        ArrayList<Title> titles = new ArrayList<>();
+        titles.add(movieOne);
+        titles.add(movieTwo);
+        titles.add(movieThree);
+        titles.add(seriesOne);
+        for (Title t : titles) {
+            System.out.println(t);
+            System.out.println("Rating: " + String.format("%.2f",t.getRating()) + "⭐");
+        }
+        System.out.println("\n------------------------------------------------------------\n");
+        System.out.println("Number of movies in the list: " + titles.size() + " movies");
+        System.out.println("First movie title: " + titles.getFirst().getTitle());
+
+        System.out.println("\n------------------------------------------------------------\n");
+        List<String> artistSearch = new ArrayList<>();
+        artistSearch.add("Robert de Niro");
+        artistSearch.add("Bryan Cranston");
+        artistSearch.add("Marlon Brando");
+        System.out.println(artistSearch);
+
+        Collections.sort(artistSearch);
+        System.out.println(artistSearch);
+
+        Collections.sort(titles);
+        System.out.println(titles);
+
     }
 }
