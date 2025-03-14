@@ -1,6 +1,8 @@
 package com.screenmatch.models;
 
+import com.google.gson.annotations.SerializedName;
 import com.screenmatch.calculations.Rateable;
+import com.screenmatch.exception.ConversionErrorYear;
 
 public class Title implements Rateable, Comparable<Title> {
     private String title;
@@ -9,6 +11,17 @@ public class Title implements Rateable, Comparable<Title> {
     private double sumRate;
     private int totalRate;
     private int duration;
+
+    public Title(OmdbTitle newTitle) {
+        this.title = newTitle.title();
+
+        if (newTitle.year().length() > 4){
+            throw new ConversionErrorYear("Não foi possível converter o ano. Mais de quatro caracteres.");
+        }
+        this.year = Integer.valueOf(newTitle.year());
+        this.duration = Integer.valueOf(newTitle.runtime().substring(0, 3));
+
+    }
 
     public void setTitle(String title) {
         this.title = title;
@@ -76,7 +89,7 @@ public class Title implements Rateable, Comparable<Title> {
 
     @Override
     public String toString() {
-        return getTitle() + " (" + getYear() + ")";
+        return "Title: " + title + " (" + year + ")";
     }
 
     @Override
