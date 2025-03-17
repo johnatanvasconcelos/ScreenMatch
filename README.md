@@ -36,7 +36,7 @@ Este é um projeto básico de um **serviço de streaming**, que está sendo dese
     ┃   ┃   ┃   ┣ 📜 FilterRecomendation.java 
     ┃   ┃   ┃   ┣ 🟢 Rateable.java 
     ┃   ┃   ┃   ┣ 📜 TimeCalculator.java
-    ┣ 📜 Main.java 
+    ┣ 📜 com.screenmatch.main.Main.java 
     ┣ 📜 README.md
 ---
 ```

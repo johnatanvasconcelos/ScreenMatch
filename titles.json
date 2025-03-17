@@ -1,18 +1,42 @@
 [
   {
-    "Title": "Matrix",
-    "Year": 1993,
-    "SignatureMovie": false,
-    "SumRate": 0.0,
-    "TotalRate": 0,
-    "Duration": 60
+    "title": "The Matrix",
+    "year": 1999,
+    "signatureMovie": false,
+    "sumRate": 0.0,
+    "totalRate": 0,
+    "duration": 136
   },
   {
-    "Title": "Dogville",
-    "Year": 2003,
-    "SignatureMovie": false,
-    "SumRate": 0.0,
-    "TotalRate": 0,
-    "Duration": 17
+    "title": "Alien: Romulus",
+    "year": 2024,
+    "signatureMovie": false,
+    "sumRate": 0.0,
+    "totalRate": 0,
+    "duration": 119
+  },
+  {
+    "title": "Top Gun",
+    "year": 1986,
+    "signatureMovie": false,
+    "sumRate": 0.0,
+    "totalRate": 0,
+    "duration": 109
+  },
+  {
+    "title": "Harry Potter and the Deathly Hallows: Part 2",
+    "year": 2011,
+    "signatureMovie": false,
+    "sumRate": 0.0,
+    "totalRate": 0,
+    "duration": 130
+  },
+  {
+    "title": "Fast and Furious",
+    "year": 1939,
+    "signatureMovie": false,
+    "sumRate": 0.0,
+    "totalRate": 0,
+    "duration": 73
   }
 ]
