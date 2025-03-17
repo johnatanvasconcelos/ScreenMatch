@@ -1,7 +1,7 @@
-# 🎬 ScreeMatch Streaming Service (Java POO) 
+# 🎬 ScreenMatch Streaming Service (Java POO) 
 ## (🚧...EM ANDAMENTO)
 
-O ***ScreenMatch*** é um projeto desenvolvido em Java que simula um catálogo de filmes e séries, permitindo a pesquisa, o cadastro e a avaliação de títulos. Ele foi criado como um exercício prático para aplicar os conceitos de **Programação Orientada a Objetos (POO)** e demonstrar a interação com uma **API externa**, o **OMDB** (*Open Movie Database*). O projeto tambm implementa a **persistência de dados** em um arquivo JSON e o tratamento de erros, além de armazenar a chave da API de forma segura.
+O ***ScreenMatch*** é um projeto desenvolvido em Java que simula um catálogo de filmes e séries, permitindo a pesquisa, o cadastro e a avaliação de títulos. Ele foi criado como um exercício prático para aplicar os conceitos de **Programação Orientada a Objetos (POO)** e demonstrar a interação com uma **API externa**, o **OMDB** (*Open Movie Database*). O projeto também implementa a **persistência de dados** em um arquivo JSON e o tratamento de erros, além de armazenar a chave da API de forma segura.
 
 ---
 
@@ -80,8 +80,9 @@ O ***ScreenMatch*** é um projeto desenvolvido em Java que simula um catálogo d
     ┃   ┃   ┃   ┣ 📜 JsonFileWriter.java  
     ┣ 📜 com.screenmatch.main.Main.java 
     ┣ 📜 README.md
----
 ```
+---
+
 ## Conceitos de POO aplicados
 🔹 Encapsulamento: Uso de private para atributos e métodos de acesso (getters e setters).
 🔹 Herança: Movie e Series herdam da classe Title.
