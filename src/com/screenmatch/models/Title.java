@@ -1,8 +1,5 @@
 package com.screenmatch.models;
 
-import com.google.gson.annotations.SerializedName;
-import com.screenmatch.exception.ConversionErrorYear;
-
 public class Title implements Comparable<Title> {
     private String title;
     private int year;
@@ -13,10 +10,6 @@ public class Title implements Comparable<Title> {
 
     public Title(OmdbTitle newTitle) {
         this.title = newTitle.title();
-
-        if (newTitle.year().length() > 4){
-            throw new ConversionErrorYear("Não foi possível converter o ano. Mais de quatro caracteres.");
-        }
         this.year = Integer.valueOf(newTitle.year());
         this.duration = Integer.valueOf(newTitle.runtime().replaceAll("\\D", ""));
 
